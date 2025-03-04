@@ -1,0 +1,24 @@
+---
+- name: Deploy Docker container from Docker Hub to EC2 instance
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure Docker is running
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pull the Docker image from Docker Hub
+      docker_image:
+        name: shakibkhatri/getting-started:latest
+        source: pull
+
+    - name: Run the Docker container
+      docker_container:
+        name: todo-App 
+        image: shakibkhatri/getting-started:latest
+        state: started
+        ports:
+          - "80:80" 
+        restart_policy: always
