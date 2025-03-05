@@ -11,6 +11,7 @@ Breakdown of the Playbook (todo_deploy.yml)
   hosts: all
   become: yes
   tasks:
+
 Task 1: Ensure Docker is Installed and Running
     - name: Ensure Docker is running
       service:
