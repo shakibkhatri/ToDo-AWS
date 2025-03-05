@@ -6,11 +6,11 @@ Link to WebApp:- http://16.170.232.207/
 This Ansible playbook automates the deployment of a Docker container from Docker Hub onto an EC2 instance. The playbook ensures that Docker is installed and running, pulls the specified Docker image, and runs the container with the desired configuration.
 
 Breakdown of the Playbook (todo_deploy.yml)
----
-- name: Deploy Docker container from Docker Hub to EC2 instance
-  hosts: all
-  become: yes
-  tasks:
+  ---
+    - name: Deploy Docker container from Docker Hub to EC2 instance
+      hosts: all
+      become: yes
+      tasks:
 
 Task 1: Ensure Docker is Installed and Running
 
